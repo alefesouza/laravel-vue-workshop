@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/json', 'HomeController@json');
+
+Route::resource('/users', 'UserController', [
+    'except' => ['show', 'edit'],
+]);
