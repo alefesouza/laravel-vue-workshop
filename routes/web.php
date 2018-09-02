@@ -11,16 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/sum/{valor1}/{valor2}', function($value1, $value2) {
-    $result = $value1 + $value2;
+// Route::get('/sum/{valor1}/{valor2}', function($value1, $value2) {
+//     $result = $value1 + $value2;
 
-    return view('result', ['result' => $result]);
-});
+//     return view('result', ['result' => $result]);
+// });
 
-Route::get('/hello', 'HomeController@hello');
+// Route::get('/hello', 'HomeController@hello');
 
-Route::get('/users', 'HomeController@users');
+// Route::get('/users', 'HomeController@users');
+
+// Route::get('/vue', function () {
+//     return view('vue');
+// });
+
+Route::get('/{any}', function () {
+    return view('vue');
+})->where('any', '.*');
