@@ -7,6 +7,7 @@ O intuito dessa página é explicar algumas coisas que podem ser desconhecidas p
 * [NPM](#npm)
 * [Vue.js](#vuejs)
 * [Iniciando o projeto](#getting-started)
+* [Extras](#extras)
 
 ## <a name="laravel"></a> Laravel
 
@@ -14,13 +15,13 @@ O Laravel é atualmente um dos principais frameworks PHP, seguindo uma estrutura
 
 ## <a name="composer"></a> Composer
 
-O Composer é o gerenciador de pacotes mais famoso de projetos PHP, com ele você pode facilmente usar bibliotecas e frameworks criado por outras pessoas nos seus projetos, utilizaremos ele para instalar as dependências do Laravel.
+O Composer é o gerenciador de pacotes mais famoso de projetos PHP, com ele você pode facilmente usar bibliotecas e frameworks desenvolvidos por outras pessoas nos seus projetos, utilizaremos ele para instalar as dependências do Laravel.
 
 Você pode baixá-lo [clicando aqui](https://getcomposer.org/download).
 
 ## <a name="vuejs"></a> Vue.js
 
-O Vue.js é atualmente um dos principais frameworks front-end, seguindo uma estrutura de componentes que torna muito fácil o desenvolvimento front-end, entre Angular, React e Vue.js eu particularmente acho o último o mais simples e divertido de se trabalhar, e recomento tanto para projetos pequenos quanto para projetos grandes, ele também é o mais lembrado pela comunidade Laravel, sendo que ele até faz parte do template padrão do Laravel.
+O Vue.js é atualmente um dos principais frameworks front-end, seguindo uma estrutura de componentes que torna muito fácil o desenvolvimento front-end, entre Angular, React e Vue.js, eu particularmente acho o último o mais simples e divertido de se trabalhar, e recomento tanto para projetos pequenos quanto para projetos grandes, ele também é o mais lembrado pela comunidade Laravel, sendo que ele até faz parte do template padrão do Laravel, você pode saber mais sobre ele no [site oficial](https://vuejs.org).
 
 ## <a name="npm"></a> NPM
 
@@ -40,10 +41,16 @@ Para iniciar, primeiro baixe o [Composer](https://getcomposer.org/download) e o 
 composer global require "laravel/installer"
 ```
 
-Após a mensagem de sucesso, navegue até a pasta que você deseja iniciar o projeto e execute o seguinte comando:
+Após a mensagem de sucesso, navegue até a pasta que você deseja iniciar o projeto e execute o seguinte comando caso você esteja executando o PHP 7.1+:
 
 ```
 composer create-project --prefer-dist laravel/laravel laravel-vue-workshop
+```
+
+Ou esse caso esteja executando o PHP 5.6+:
+
+```
+composer create-project --prefer-dist laravel/laravel laravel-vue-workshop "5.4.*"
 ```
 
 Isso criará os arquivos e estrutura de pastas básicas de um projeto Laravel e instalará as dependências do mesmo.
@@ -62,4 +69,12 @@ npm install
 
 Pronto, após a mensagem de sucesso você estará pronto para começar um projeto em Laravel com Vue.js.
 
-No dia do workshop aprenderemos coisas super legais como o sistema de controllers, rotas, migrations, models e um pouco do Blade template do Laravel, e também o sistema de componentes, rotas e bindings do Vue.js.
+No dia do workshop aprenderemos coisas super legais como o sistema de controllers, rotas, migrations, models, validations, authentication e um pouco do Blade template do Laravel, e também o sistema de componentes, rotas e bindings do Vue.js.
+
+## <a name="extras"></a> Extras
+
+Usaremos alguns outros programas para nos auxiliar no desenvolvimento, são eles:
+
+[Postman](https://www.getpostman.com/) - Usaremos para verificar nossas chamadas HTTP com verbos além de GET de POST.
+
+[SQLite Browser](https://sqlitebrowser.org/) - Usaremos para verificar os dados em nosso banco de dados SQLite.
