@@ -15,17 +15,32 @@
 //     return view('welcome');
 // });
 
-// Route::get('/sum/{valor1}/{valor2}', function($value1, $value2) {
-//     $result = $value1 + $value2;
+Route::get('hello/{nome}', function($nome) {
+    return 'Hello ' . $nome;
+});
 
-//     return view('result', ['result' => $result]);
+Route::get('soma/{num1}/{num2}', function($num1, $num2) {
+    $soma = $num1 + $num2;
+
+    echo $soma;
+});
+
+// Route::get('exemplo/{numero}', function($numero) {
+//     $numArray = [5, 6, 9, 8, 4, 5, 1];
+
+//     return view('exemplo', [
+//         'numero' => $numero,
+//         'numArray' => $numArray
+//     ]);
 // });
 
-// Route::get('/hello', 'HomeController@hello');
+Route::get('exemplo/{numero}', 'ExemploController@index');
 
-// Route::get('/users', 'HomeController@users');
+Auth::routes();
 
-// Route::get('/vue', function () {
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('vue', function() {
 //     return view('vue');
 // });
 

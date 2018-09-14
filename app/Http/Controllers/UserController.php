@@ -25,11 +25,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $request->validate([
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6'
+        ]);
 
-        $data['password'] = bcrypt($data['password']);
+        $request['password'] = bcrypt($request['password']);
 
-        $user = User::create($data);
+        $user = User::create($request->all());
 
         return $user;
     }
@@ -54,13 +57,14 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $data = $request->all();
+        $request->validate([
+            'email' => 'required|email|unique:users,id,' . $user->id,
+            'password' => 'required|min:6'
+        ]);
 
-        if (!empty($data['password'])) {
-            $data['password'] = bcrypt($data['password']);
-        }
+        $request['password'] = bcrypt($request['password']);
 
-        $user->update($data);
+        $user->update($request->all());
 
         return $user;
     }

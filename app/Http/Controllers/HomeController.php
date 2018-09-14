@@ -3,23 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
 
 class HomeController extends Controller
 {
-
-    public function hello() {
-        return 'Hello World';
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 
-    public function json() {
-        return ['key' => 'value', 'key2' => 'value2'];
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('home');
     }
-
-    public function users() {
-        $users = User::all();
-
-        return view('users', ['users' => $users]);
-    }
-
 }
