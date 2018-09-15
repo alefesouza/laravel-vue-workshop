@@ -13,6 +13,18 @@ use Illuminate\Http\Request;
 |
 */
 
+use App\User;
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('user', function() {
+    $user = User::find(1);
+
+    return $user;
+});
+
+Route::resource('users', 'UserController', [
+    'except' => ['create', 'edit'],
+]);

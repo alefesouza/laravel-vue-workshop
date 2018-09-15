@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/hello', function() {
+//     return 'Hello World';
+// });
+
+// Route::get('/soma/{num1}/{num2}', function($num1, $num2) {
+//     return $num1 + $num2;
+// });
+
+// Route::get('/exemplo/{numero}', 'ExemploController@index');
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/{any}', function () {
+    return view('vue');
+})->where('any', '.*');
